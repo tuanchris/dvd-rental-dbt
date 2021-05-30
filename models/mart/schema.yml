@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_films
+    columns:
+      - name: film_id
+        tests: ['unique', 'not_null']
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: ['unique', 'not_null']
+  - name: fct_rentals
+    columns:
+      - name: rental_id
+        tests: ['unique', 'not_null']
+  - name: dim_stores
+    columns: 
+      - name: store_id
+        tests: ['unique', 'not_null']
+  - name: dim_addresses
+    columns: 
+      - name: address_id
+        tests: ['unique', 'not_null']
+  - name: rentals_denormalized
+    columns: 
+      - name: rental_id
+        tests: ['unique', 'not_null']
+
+exposures:
+  - name: dvd_rental_discovery
+    type: dashboard
+    maturity: low
+    url: https://datastudio.google.com/u/0/reporting/c8f983d9-f2e8-47f1-acb8-3ec053cc8de1/page/FSiKC
+    description: >
+      Did someone say "exponential growth"?
+    
+    depends_on:
+      - ref('rentals_denormalized')
+    
+    owner:
+      name: Tuan Nguyen
+      email: tuan.na@joonsolutions.com
