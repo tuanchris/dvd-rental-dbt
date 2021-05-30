@@ -10,17 +10,17 @@ SELECT
     da.postal_code AS store_postal_code,
 
     staff_id,
-    first_name AS staf_first_name,
-    last_name AS staf_last_name,
-    sa.address_id AS staf_address_id,
-    email AS staf_email,
-    active AS staf_active,
-    username AS staf_username,
-    sa.address AS staf_address,
-    sa.district AS staf_district,
-    sa.city AS staf_city,
-    sa.country AS staf_country,
-    sa.phone AS staf_phone
+    first_name AS staff_first_name,
+    last_name AS staff_last_name,
+    sa.address_id AS staff_address_id,
+    email AS staff_email,
+    active AS staff_active,
+    username AS staff_username,
+    sa.address AS staff_address,
+    sa.district AS staff_district,
+    sa.city AS staff_city,
+    sa.country AS staff_country,
+    sa.phone AS staff_phone
 
 FROM
   {{ source('demo_dvd_rental', 'store') }} s
