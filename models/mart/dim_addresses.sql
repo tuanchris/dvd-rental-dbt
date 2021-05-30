@@ -11,7 +11,7 @@ SELECT
     phone
 
 FROM
-    {{ source('dvd_rental','address') }} A
-    LEFT JOIN {{ source('dvd_rental','city') }} ci USING(city_id)
-    LEFT JOIN {{ source('dvd_rental','country') }} co USING(country_id)
+    {{ source('demo_dvd_rental','address') }} A
+    LEFT JOIN {{ source('demo_dvd_rental','city') }} ci USING(city_id)
+    LEFT JOIN {{ source('demo_dvd_rental','country') }} co USING(country_id)
 ORDER BY 1 ASC

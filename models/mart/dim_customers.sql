@@ -14,6 +14,6 @@ SELECT
     postal_code AS customer_postal_code,
     phone AS customer_phone
 FROM
-    {{ source('dvd_rental','customer') }} C
+    {{ source('demo_dvd_rental','customer') }} C
     LEFT JOIN {{ ref('dim_addresses') }} A USING(address_id)
 ORDER BY 1 ASC

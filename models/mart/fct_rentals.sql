@@ -10,6 +10,6 @@ SELECT
     payments
 
 FROM
-    {{ source('dvd_rental','rental') }} r
-    LEFT JOIN {{ source('dvd_rental','inventory') }} i USING(inventory_id)
+    {{ source('demo_dvd_rental','rental') }} r
+    LEFT JOIN {{ source('demo_dvd_rental','inventory') }} i USING(inventory_id)
     LEFT JOIN {{ ref('stg_payments') }} p USING(rental_id)
