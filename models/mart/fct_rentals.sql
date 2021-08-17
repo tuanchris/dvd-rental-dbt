@@ -1,15 +1,15 @@
 SELECT
     rental_id,
     inventory_id,
-    rental_date,
+    date(rental_date) as rental_date,
     r.customer_id,
-    return_date,
+    date(return_date) as return_date,
     r.staff_id,
     film_id,
     i.store_id,
     payments
 
 FROM
-    {{ source('demo_dvd_rental','rental') }} r
-    LEFT JOIN {{ source('demo_dvd_rental','inventory') }} i USING(inventory_id)
+    {{ source('dvd_rental','rental') }} r
+    LEFT JOIN {{ source('dvd_rental','inventory') }} i USING(inventory_id)
     LEFT JOIN {{ ref('stg_payments') }} p USING(rental_id)

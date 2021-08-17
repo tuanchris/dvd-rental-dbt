@@ -5,7 +5,7 @@ SELECT
     first_name AS customer_first_name,
     last_name AS customer_last_name,
     email AS customer_email,
-    create_date AS customer_create_date,
+    date(create_date) AS customer_create_date,
     address AS customer_address,
     address2 AS customer_address2,
     district AS customer_district,
@@ -14,6 +14,6 @@ SELECT
     postal_code AS customer_postal_code,
     phone AS customer_phone
 FROM
-    {{ source('demo_dvd_rental','customer') }} C
+    {{ source('dvd_rental','customer') }} C
     LEFT JOIN {{ ref('dim_addresses') }} A USING(address_id)
 ORDER BY 1 ASC

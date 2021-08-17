@@ -23,13 +23,13 @@ SELECT
     sa.phone AS staff_phone
 
 FROM
-  {{ source('demo_dvd_rental', 'store') }} s
+  {{ source('dvd_rental', 'store') }} s
 LEFT JOIN
   {{ ref('dim_addresses') }} da
 ON
   da.address_id = s.address_id
 LEFT JOIN
-  {{ source('demo_dvd_rental', 'staff') }} st
+  {{ source('dvd_rental', 'staff') }} st
 ON
   st.staff_id = s.manager_staff_id
 LEFT JOIN
