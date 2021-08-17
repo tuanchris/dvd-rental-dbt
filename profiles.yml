@@ -1,0 +1,9 @@
+dvd_rental_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      threads: 32
+      project: #YOUR_PROJECT_NAME
+      dataset: #YOUR_DATASET
