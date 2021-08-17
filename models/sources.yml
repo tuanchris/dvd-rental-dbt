@@ -1,7 +1,8 @@
 version: 2
 
 sources:
-  - name: demo_dvd_rental
+  - name: dvd_rental
+    schema: '{{ target.schema }}'
     tables:
       - name: actor
         columns:
