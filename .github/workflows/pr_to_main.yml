@@ -3,7 +3,7 @@ name: pr_to_main
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       # Specify paths that will trigger this workflow
       - 'models/**'
