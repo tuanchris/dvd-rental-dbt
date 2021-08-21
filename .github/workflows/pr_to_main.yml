@@ -4,11 +4,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      # Specify paths that will trigger this workflow
-      - 'models/**'
-      - 'dbt_project.yml'
-      - 'packages.yml'
 env:
   DBT_PROFILES_DIR: ./
 
