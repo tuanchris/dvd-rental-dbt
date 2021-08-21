@@ -32,7 +32,9 @@ jobs:
           KEYFILE: ${{secrets.DBT_GOOGLE_BIGQUERY_KEYFILE_DEV}}
 
       - name: Install dependencies
-        run: dbt deps
+        run: |
+          pip install dbt
+          dbt deps
       
       # Add dbt seed or other commands here if needed
       - name: Run dbt models
