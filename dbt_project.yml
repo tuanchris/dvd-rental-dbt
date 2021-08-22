@@ -34,6 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dvd_rental_dbt:
     mart:
+      +schema: "{{ target.name }}_mart"
       materialized: table
       stg:
         materialized: view
